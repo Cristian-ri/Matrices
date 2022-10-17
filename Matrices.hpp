@@ -12,6 +12,9 @@ class Matrices{
 		//Constructor por defecto
 		Matrices();
 		
+		//Destructor
+		~Matrices();
+		
 		//Funciones miembros establecer
 		void setFilas(const int);
 		void setColumnas(const int);
@@ -22,6 +25,9 @@ class Matrices{
 		
 		//Mostrar Matriz
 		void Mostrar();
+		
+		//Llenar Matriz
+		void LlenarMatrices();
 		
 		
 	private:

@@ -16,10 +16,20 @@ Matrices::Matrices(){
 	
 	for(int i=0; i<this->filas; i++){
 		for(int j=0; j<this->columnas; j++){
-			this->m[i][j]= 0;
+			this->m[i][j] = 0;
 		}	
 	}	
 }
+
+//Destructor
+Matrices::~Matrices(){
+	
+	for(int i=0; i<this->filas; i++){
+		delete[] this->m[i];
+	}
+	delete[] this->m;
+}
+
 
 //Funciones miembros establecer
 void Matrices::setFilas(const int mi_filas){
@@ -54,6 +64,19 @@ void Matrices::Mostrar(){
 		cout<<endl;
 	}
 	cout<<endl;
+}
+
+//Llenar Matrices
+void Matrices::LlenarMatrices(){
+	
+	cout<<"Ingrese los datos"<<endl;
+	
+	for(int i=0; i<this->filas; i++){
+		for(int j=0; j<this->columnas; j++){
+			cin>>this->m[i][j];
+		}
+	}
+	cout<<endl;	
 }
 
 

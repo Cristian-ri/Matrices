@@ -3,7 +3,8 @@
 int main(int argc, char** argv) 
 {
 	
-	Matrices M1(4,4);
+	Matrices M1(3,3);
+	M1.LlenarMatrices();
 	M1.Mostrar();
 	
 	return 0;
