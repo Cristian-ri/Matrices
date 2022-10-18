@@ -1,4 +1,7 @@
 #include "Matrices.hpp"
+#include<iomanip> //setw()
+using std::setw;
+
 // Constructor
 Matrices::Matrices(const int mi_filas, const int mi_columnas){
 	
@@ -59,7 +62,7 @@ void Matrices::Mostrar(){
 	
 	for(int i=0; i<this->filas; i++){
 		for(int j=0; j<this->columnas; j++){
-			cout<<this->m[i][j]<<" ";
+			cout<<setw(6)<<this->m[i][j]<<" ";
 		}
 		cout<<endl;
 	}
@@ -77,6 +80,16 @@ void Matrices::LlenarMatrices(){
 		}
 	}
 	cout<<endl;	
+}
+
+//Sobrecarga de operadores amigos
+
+//Producto escalar de Matrices
+Matrices &operator *=(const double &escalar, const Matrices &Matriz1){
+	
+	
+	
+	
 }
 
 

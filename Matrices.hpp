@@ -6,6 +6,8 @@ using std::endl;
 
 class Matrices{
 	
+	friend Matrices &operator *=(const double &, const Matrices &);
+	
 	public:
 		//Constructor
 		Matrices(const int, const int);
