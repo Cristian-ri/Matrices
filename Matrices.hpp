@@ -7,6 +7,7 @@ using std::endl;
 class Matrices{
 	
 	friend Matrices &operator *=(const double &, const Matrices &);
+	friend Matrices &operator  +(const Vectore &, const Matrices &);
 	
 	public:
 		//Constructor
@@ -15,7 +16,7 @@ class Matrices{
 		Matrices();
 		
 		//Destructor
-		~Matrices();
+		~Matrices(); //No funciona bien, corregir errores
 		
 		//Funciones miembros establecer
 		void setFilas(const int);
