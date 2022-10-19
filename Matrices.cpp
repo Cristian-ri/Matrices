@@ -101,6 +101,20 @@ Matrices &operator *=(const double &escalar, const Matrices &Matriz1){
 	return *Matriz2;	
 }
 
+//Suma de Matrices
+
+Matrices &operator +(const Matrices &Matriz3, const Matrices &Matriz4){
+	
+	Matrices *Matriz5 = new Matrices(Matriz3.getFilas(), Matriz4.getColumnas());
+	
+	for(int i=0; i<Matriz3.getFilas(); i++){
+		for(int j=0; j<Matriz3.getColumnas(); j++){
+			Matriz5->m[i][j] = Matriz3.m[i][j] + Matriz4.m[i][j];
+		}
+	}
+	return *Matriz5;
+}
+
 
 
 
