@@ -7,7 +7,7 @@ using std::endl;
 class Matrices{
 	
 	friend Matrices &operator *=(const double &, const Matrices &);
-	friend Matrices &operator  +(const Vectore &, const Matrices &);
+	friend Matrices &operator  +(const Matrices &, const Matrices &);
 	
 	public:
 		//Constructor
@@ -24,7 +24,7 @@ class Matrices{
 		
 		//Funciones miembro obtener
 		const int getFilas()const;
-		const int getFolumnas()const;
+		const int getColumnas()const;
 		
 		//Mostrar Matriz
 		void Mostrar();
