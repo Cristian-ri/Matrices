@@ -18,6 +18,10 @@ int main(int argc, char** argv)
 	M3 = M1 + M2;
 	M3.Mostrar();
 	
+	cout<<"***********************"<<endl;
+	M3.Producto(&M1,&M2);
+	M3.Mostrar();
+	
 	
 	return 0;
 }

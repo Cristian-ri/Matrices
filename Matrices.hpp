@@ -13,10 +13,10 @@ class Matrices{
 		//Constructor
 		Matrices(const int, const int);
 		//Constructor por defecto
-		Matrices();
+		Matrices(); //No funciona bien, corregir errores
 		
 		//Destructor
-		~Matrices(); //No funciona bien, corregir errores
+		~Matrices(); 
 		
 		//Funciones miembros establecer
 		void setFilas(const int);
@@ -32,7 +32,11 @@ class Matrices{
 		//Llenar Matriz
 		void LlenarMatrices();
 		
+		//Sobrecarga de Funciones Miembro
 		
+		//Datos constantes a ptr constantes
+		void Producto(const Matrices *const, const Matrices *const);
+			
 	private:
 	int  **m;
 	int filas, columnas;

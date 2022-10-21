@@ -19,8 +19,7 @@ Matrices::Matrices(){
 	
 	this->filas;
 	this->columnas;
-	
-	
+		
 	for(int i=0; i<this->filas; i++){
 		for(int j=0; j<this->columnas; j++){
 			this->m[i][j] = 0;
@@ -102,7 +101,6 @@ Matrices &operator *=(const double &escalar, const Matrices &Matriz1){
 }
 
 //Suma de Matrices
-
 Matrices &operator +(const Matrices &Matriz3, const Matrices &Matriz4){
 	
 	Matrices *Matriz5 = new Matrices(Matriz3.getFilas(), Matriz4.getColumnas());
@@ -113,6 +111,19 @@ Matrices &operator +(const Matrices &Matriz3, const Matrices &Matriz4){
 		}
 	}
 	return *Matriz5;
+}
+
+//Sobrecarga de Funciones Miembros
+
+void Matrices::Producto(const Matrices *const Matriz6, const Matrices *const Matriz7){
+	
+	Matrices *Matriz8 = new Matrices(Matriz6->getFilas(), Matriz6->getColumnas());
+	
+	for(int i=0; i<Matriz6->getFilas(); i++){
+		for(int j=0; j<Matriz6->getColumnas(); j++){
+			Matriz8->m[i][j] += Matriz6->m[i][j] * Matriz7->m[i][j];
+		}
+	}	
 }
 
 
