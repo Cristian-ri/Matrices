@@ -121,11 +121,13 @@ void Matrices::Producto(const Matrices *const Matriz6, const Matrices *const Mat
 	
 	for(int i=0; i<Matriz6->getFilas(); i++){
 		for(int j=0; j<Matriz6->getColumnas(); j++){
-			Matriz8->m[i][j] += Matriz6->m[i][j] * Matriz7->m[i][j];
+			Matriz8->m[i][j] = 0;
+			for(int k= 0; k<Matriz6->getColumnas(); k++){
+				Matriz8->m[i][j] += Matriz6->m[i][k] * Matriz7->m[k][j];
+			}
 		}
-	}	
+	}
+	Matriz8->Mostrar();
 }
-
-
 
 

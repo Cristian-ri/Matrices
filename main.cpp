@@ -20,7 +20,6 @@ int main(int argc, char** argv)
 	
 	cout<<"***********************"<<endl;
 	M3.Producto(&M1,&M2);
-	M3.Mostrar();
 	
 	
 	return 0;
