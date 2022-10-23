@@ -115,19 +115,36 @@ Matrices &operator +(const Matrices &Matriz3, const Matrices &Matriz4){
 
 //Sobrecarga de Funciones Miembros
 
-void Matrices::Producto(const Matrices *const Matriz6, const Matrices *const Matriz7){
+void Matrices::Producto(const Matrices *const Matriz6){
 	
 	Matrices *Matriz8 = new Matrices(Matriz6->getFilas(), Matriz6->getColumnas());
 	
 	for(int i=0; i<Matriz6->getFilas(); i++){
 		for(int j=0; j<Matriz6->getColumnas(); j++){
-			Matriz8->m[i][j] = 0;
+			Matriz8->m[i][j] = 0; 
 			for(int k= 0; k<Matriz6->getColumnas(); k++){
-				Matriz8->m[i][j] += Matriz6->m[i][k] * Matriz7->m[k][j];
+				Matriz8->m[i][j] += Matriz6->m[i][k] * m[k][j];
 			}
 		}
 	}
 	Matriz8->Mostrar();
+}
+
+
+//Producto de otra forma
+Matrices Matrices::Producto(const Matrices *const Matriz9, const Matrices *const Matriz10){
+	
+	Matrices *Matriz11  = new Matrices(Matriz9->getFilas(), Matriz9->getColumnas());
+	
+	for(int i=0; i< Matriz9->getFilas(); i++){
+		for(int j=0; j<Matriz9->getColumnas(); j++){
+			Matriz11->m[i][j] = 0;
+			for(int k=0; k<Matriz9->getColumnas(); k++){
+				Matriz11->m[i][j] += Matriz9->m[i][k] * Matriz10->m[k][j]; 
+			}
+		}
+	}
+	return *Matriz11;
 }
 
 

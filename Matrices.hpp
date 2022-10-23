@@ -33,9 +33,9 @@ class Matrices{
 		void LlenarMatrices();
 		
 		//Sobrecarga de Funciones Miembro
-		
 		//Datos constantes a ptr constantes
-		void Producto(const Matrices *const, const Matrices *const);
+		void Producto(const Matrices *const);
+		Matrices Producto(const Matrices *const, const Matrices *const);
 			
 	private:
 	int  **m;
