@@ -4,7 +4,7 @@ int main(int argc, char** argv)
 {
 	
 	Matrices M1(3,3), M2(3,3);
-	Matrices M3(3,3), M4(0,0);
+	Matrices M3(0,0), M4(0,0);
 	M1.LlenarMatrices();
 	cout<<"Matriz 1"<<endl;
 	M1.Mostrar();
