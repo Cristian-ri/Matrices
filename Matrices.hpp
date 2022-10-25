@@ -38,7 +38,7 @@ class Matrices{
 		Matrices Producto(const Matrices *const, const Matrices *const);
 			
 	private:
-	int  **m;
+	float **m;
 	int filas, columnas;
 	
 };

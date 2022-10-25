@@ -8,9 +8,9 @@ Matrices::Matrices(const int mi_filas, const int mi_columnas){
 	this->filas = mi_filas;
 	this->columnas = mi_columnas;
 	
-	m = new int *[filas];
+	m = new float *[filas];
 	for(int i=0; i<this->filas; i++){
-		this->m[i] = new int[columnas];	
+		this->m[i] = new float[columnas];	
 	}	
 }
 
