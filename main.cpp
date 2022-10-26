@@ -21,11 +21,6 @@ int main()
 	cout<<"Ingrese su eleccion: ";
 	cin>>opp;
 	Menu(opp);
-/*	M1.Producto(&M2);
-	cout<<"***********************"<<endl;
-	M4 = M4.Producto(&M1,&M2);
-	M4.Mostrar();*/
-	
 
 	return 0;
 }
@@ -82,8 +77,8 @@ void Menu(const int op){
 			M2.LlenarMatrices();
 			M1.Mostrar();
 			M2.Mostrar();
-			M3 = M3.Producto(&M1,&M2);
-			M3.Mostrar();
+			M1.Producto(&M1,&M2);
+			M1.Mostrar();
 			break;
 			
 		case 4:
