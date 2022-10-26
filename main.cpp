@@ -1,28 +1,105 @@
 #include "Matrices.hpp"
+#include<string>
+using std::string;
 
-int main(int argc, char** argv) 
+void Menu(const int);
+
+int main() 
 {
 	
-	Matrices M1(3,3), M2(3,3);
-	Matrices M3(0,0), M4(0,0);
-	M1.LlenarMatrices();
-	cout<<"Matriz 1"<<endl;
-	M1.Mostrar();
-	cout<<"**********************"<<endl;
-	cout<<"Producto escalar 3*Matriz 1"<<endl;
-	int x=3;
-	M2 = x*=M1;
-	M2.Mostrar();
-	cout<<"**********************"<<endl;
-	cout<<"Suma de Matriz 1 + Matriz 2"<<endl;
-	M3 = M1 + M2;
-	M3.Mostrar();
-	cout<<"***********************"<<endl;
-	M1.Producto(&M2);
+	int opp;
+	cout<<"**************************"<<endl;
+	cout<<"Operaciones con Matrices."<<endl;
+	cout<<"1. Producto Escalar."<<endl;
+	cout<<"2. Suma de Matrices. "<<endl;
+	cout<<"3.Producto de Matricial."<<endl;
+	cout<<"**************************"<<endl;
+	cout<<"Solucion de Sistema."<<endl;
+	cout<<"4. Gauss-Jordan."<<endl;
+	cout<<"5.Salir."<<endl;
+	cout<<endl;
+	cout<<"Ingrese su eleccion: ";
+	cin>>opp;
+	Menu(opp);
+/*	M1.Producto(&M2);
 	cout<<"***********************"<<endl;
 	M4 = M4.Producto(&M1,&M2);
-	M4.Mostrar();
+	M4.Mostrar();*/
 	
-	
+
 	return 0;
+}
+
+
+void Menu(const int op){
+	
+	string elegir;
+	int f, c, x;
+	int ff, cc;
+	cout<<"Matriz 1"<<endl;
+	cout<<"Ingrese el numero de filas: ";
+	cin>>f;
+	cout<<"Ingrese el numero de columnas: ";
+	cin>>c;
+	cout<<endl;
+	cout<<"Matriz 2"<<endl;
+	cout<<"Ingrese el numero de filas: ";
+	cin>>ff;
+	cout<<"Ingrese el numero de columnas: ";
+	cin>>cc;
+	cout<<endl;
+	
+	Matrices M1(f,c), M2(ff,cc);
+	Matrices M3(0,0);
+	
+	switch(op){
+		
+		case 1:
+			cout<<"1. Producto Escalar."<<endl;
+			cout<<endl;
+			cout<<"Ingrese el escalar:";
+			cin>>x;
+			cout<<endl;
+			M1.LlenarMatrices();
+			M1.Mostrar();
+			M3 = x*=M1;
+			M3.Mostrar();
+			break;
+			
+		case 2:
+			cout<<"Suma de Matrices."<<endl;
+			M1.LlenarMatrices();
+			M2.LlenarMatrices();
+			M1.Mostrar();
+			M2.Mostrar();
+			M3 = M1 + M2;
+			M3.Mostrar();
+			break;
+			
+		case 3:
+			cout<<"Producto Matricial."<<endl;
+			M1.LlenarMatrices();
+			M2.LlenarMatrices();
+			M1.Mostrar();
+			M2.Mostrar();
+			M3 = M3.Producto(&M1,&M2);
+			M3.Mostrar();
+			break;
+			
+		case 4:
+			cout<<"Lo sentimos no disponible."<<endl;
+			break;
+			
+		case 5:
+			cout<<"¿Si o No?"<<endl;
+			cin>>elegir;
+			if(elegir == "Si"){
+				exit(0);
+			}		
+			else
+				cout<<"Opcion no valido."<<endl;
+				
+			default:
+				cout<<"Opcion no valida."<<endl;	
+		}
 }

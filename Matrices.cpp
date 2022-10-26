@@ -134,7 +134,7 @@ void Matrices::Producto(const Matrices *const Matriz6){
 //Producto de otra forma
 Matrices Matrices::Producto(const Matrices *const Matriz9, const Matrices *const Matriz10){
 	
-	Matrices *Matriz11  = new Matrices(Matriz9->getFilas(), Matriz10->getColumnas());
+	Matrices *Matriz11  = new Matrices(Matriz9->getColumnas(), Matriz10->getFilas());
 	
 	for(int i=0; i< Matriz9->getFilas(); i++){
 		for(int j=0; j<Matriz9->getColumnas(); j++){
